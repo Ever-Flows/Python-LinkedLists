@@ -95,6 +95,16 @@ class SinglyLinkedList:
             curr = next_node
         self.head = prev_node
 
+
+    # functions added per the code challenge to get linklist length
+    def llength(self):
+        pos=0
+        curr = self.head
+        while curr:
+            pos+=1
+            curr = curr.next
+        return pos
+
     # function added per the code challenge
     def reverse_mton(self,m,n):
         """
@@ -104,6 +114,12 @@ class SinglyLinkedList:
         prev_node = None
         next_node = None
         pos=0
+        if (n > self.llength()):
+            print("Error: Aborting - reverse last index greater than linklist length")
+            return
+        if(m < 0):
+            print("Error: Aborting - linklist index start from 1. Negative Index not allowed")
+            return
         while curr:
             pos+=1
             # start with the changes at position m
@@ -122,16 +138,16 @@ class SinglyLinkedList:
                         self.head=curr
                     prev_node = curr
                     curr = next_node
-                    #print(curr)
                 # change the config for the mth node
                 if(m!=1):
                     p_node.next = prev_node
 
                 m_node.next = curr
-                
+                    
             else:
                 prev_node = curr
                 curr = curr.next
+            
 
 
 lst = SinglyLinkedList()
@@ -144,6 +160,6 @@ lst.prepend('Z')
 lst.append('the')
 lst.append('end')
 print(lst)
-lst.reverse_mton(1,8)
+lst.reverse_mton(-1,6)
 print(lst)
 
