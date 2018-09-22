@@ -15,3 +15,5 @@ Code challenge
 6. Added check for index value greater than linklist size in reverse_mton
 
 7. Added llength to get link list length
+
+8. Added check for m=n and m>n

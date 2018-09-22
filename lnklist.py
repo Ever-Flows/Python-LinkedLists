@@ -120,6 +120,12 @@ class SinglyLinkedList:
         if(m < 0):
             print("Error: Aborting - linklist index start from 1. Negative Index not allowed")
             return
+        if(m > n):
+            print("Error: Aborting - index m to reverse is greater than n - not allowed")
+            return
+        if(m == n):
+            print("Error: Aborting - index m is eqal to n - nothing to reverse")
+            return
         while curr:
             pos+=1
             # start with the changes at position m
@@ -160,6 +166,6 @@ lst.prepend('Z')
 lst.append('the')
 lst.append('end')
 print(lst)
-lst.reverse_mton(-1,6)
+lst.reverse_mton(4,2)
 print(lst)
 
